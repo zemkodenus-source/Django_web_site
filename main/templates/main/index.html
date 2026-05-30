@@ -1,0 +1,66 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'main/css/new_css.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-head">
+            <a href="{% url 'home' %}"><h2>My Link Service</h2></a>
+        </div>
+        <div class="navigation">
+            <h3>{% trans "Навігація" %}</h3>
+            <ul class="nav-menu">
+                <li>
+                    <a href="{% url 'home' %}" class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}"><span>{% trans "Головна" %}</span></a>
+                </li>
+                {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'my_links' %}" class="nav-link {% if request.resolver_match.url_name in 'my_links,detail_link,update_link,delete_link' %}active{% endif %}"><span>{% trans "Мої посилання" %}</span></a>
+                </li>
+                {% endif %}
+                <li>
+                    <a href="{% url 'users_links' %}" class="nav-link {% if request.resolver_match.url_name == 'users_links' %}active{% endif %}"><span>{% trans "Спільні посилання" %}</span></a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <main>
+        <header class="header-class">
+            <div class="language-select">
+                <form action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    {# Автоматично повертає користувача на ту саму сторінку, де він був #}
+                    <input name="next" type="hidden" value="{{ request.get_full_path }}">
+
+                    {# Отримуємо поточну мову в змінну CURRENT_LANG #}
+                    {% get_current_language as CURRENT_LANG %}
+
+                    <select name="language" onchange="this.form.submit()">
+                        <option value="uk" {% if CURRENT_LANG == 'uk' %}selected{% endif %}>🇺🇦 UA</option>
+                        <option value="en" {% if CURRENT_LANG == 'en' %}selected{% endif %}>🇬🇧 EN</option>
+                    </select>
+                </form>
+            </div>
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}" class="btn btn-success ms-2">{% trans "Кабінет" %}</a>
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-danger ms-2">{% trans "Вийти" %}</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}" class="btn btn-success ms-2">{% trans "Увійти" %}</a>
+                <a href="{% url 'register' %}" class="btn-warning ms-2">{% trans "Зареєструватися" %}</a>
+            {% endif %}
+        </header>
+        <div class="main-content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+</body>
+</html>

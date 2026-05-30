@@ -1,0 +1,140 @@
+{% extends 'main/index.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}link/{{ link.link }}{% endblock %}
+
+{% block content %}
+<div class="link-view">
+    <div class="link-view-header">
+        <label>{% translate "Ваш трансформований Link" %}</label>
+        <h3><a href="{{ link.origin_url }}" target="_blank">link/{{ link.link }}/</a></h3>
+    </div>
+
+    <div class="link-view-body">
+        <div class="info-item">
+            <label>{% translate "Опис" %}</label>
+            <p>{{ link.title|default:_("Без опису") }}</p>
+        </div>
+
+        <div class="info-item">
+            <label>{% translate "Категорія" %}</label>
+            <p class="category-badge">{{ link.category|default:"—" }}</p>
+        </div>
+
+        <div class="info-item">
+            <label>{% translate "Дата створення" %}</label>
+            <p class="date-text">{{ link.created_at|date:"d.m.Y H:i" }}</p>
+        </div>
+    </div>
+
+    <div class="link-view-a">
+        <a href="{% url 'update_link' link.id %}" class="btn btn-warning">{% translate "Редагувати" %}</a>
+        <a href="{% url 'delete_link' link.id %}" class="btn btn-danger">{% translate "Видалити" %}</a>
+    </div>
+</div>
+
+
+<style>
+/* Контейнер всієї картки детального перегляду */
+.link-view {
+  max-width: 600px;
+  margin: 4rem auto;
+  background-color: var(--bg-card);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.05);
+}
+
+/* Загальні стилі для текстових підписів */
+.link-view label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+/* Блок відображення самого короткого посилання */
+.link-view-header {
+  margin-bottom: 2rem;
+  background-color: rgba(59, 130, 246, 0.04);
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  border: 1px dashed var(--primary);
+  text-align: center;
+}
+
+.link-view-header h3 {
+  margin: 0;
+}
+
+.link-view-header a {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.link-view-header a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* Структура інформаційних блоків */
+.link-view-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.info-item {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.info-item p {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Виділення категорії */
+.info-item p.category-badge {
+  color: var(--bg-sidebar);
+  font-weight: 600;
+}
+
+/* Текст дати */
+.info-item p.date-text {
+  color: #475569;
+  font-size: 1rem;
+}
+
+/* Блок кнопок управління */
+.link-view-a {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Налаштування ширини кнопок у рядку */
+.link-view-a .btn {
+  flex: 1;
+  margin-left: 0 !important; /* Скидаємо старий відступ сайту */
+  padding: 0.8rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+</style>
+{% endblock %}

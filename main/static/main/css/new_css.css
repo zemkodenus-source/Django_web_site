@@ -1,0 +1,242 @@
+/* --- Скидання стилів та змінні --- */
+:root {
+  --bg-main: #f8fafc;
+  --bg-sidebar: #0f172a;
+  --bg-card: #ffffff;
+  --text-main: #334155;
+  --text-muted: #94a3b8;
+  --text-light: #f8fafc;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --success: #10b981;
+  --success-hover: #059669;
+  --warning: #f59e0b;
+  --warning-hover: #d97706;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --border-color: #e2e8f0;
+  --radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 16px; /* Збільшено базовий шрифт сайту */
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  display: flex;
+  min-height: 100vh;
+}
+
+/* --- Бічна панель (Sidebar) --- */
+.sidebar {
+  width: 330px; /* Ширину розширено з 260px */
+  background-color: var(--bg-sidebar);
+  color: var(--text-light);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.sidebar-head a {
+  text-decoration: none;
+  display: block;
+}
+
+/* Об'єднаний селектор без конфліктів */
+.sidebar-head h2 {
+  font-size: 1.85rem; /* Значно збільшено розмір назви */
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.5px;
+  transition: var(--transition);
+}
+
+.sidebar-head a:hover h2 {
+  color: var(--primary);
+}
+
+.navigation h3 {
+  font-size: 0.85rem; /* Збільшено з 0.75rem */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.nav-menu {
+  list-style: none;
+}
+
+.nav-menu li {
+  margin-bottom: 0.6rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.85rem 1.15rem; /* Збільшено внутрішні відступи */
+  font-size: 1.05rem; /* Збільшено розмір шрифту лінків */
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-light);
+}
+
+.nav-link.active {
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* --- Головна область (Main) --- */
+main {
+  margin-left: 330px; /* Збільшено відступ відповідно до ширини сайдбару */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- Шапка (Header) --- */
+.header-class {
+  background-color: var(--bg-card);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  height: 75px; /* Трохи збільшено висоту під більші кнопки */
+}
+
+.header-class form {
+  display: inline;
+}
+
+/* --- Кнопки (Buttons) --- */
+.btn, .btn-warning {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.4rem; /* Збільшено клікабельну зону */
+  font-size: 1rem; /* Збільшено розмір шрифту з 0.9rem */
+  font-weight: 500;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.ms-2 {
+  margin-left: 0.75rem;
+}
+
+.btn-success {
+  background-color: var(--success);
+  color: #fff;
+}
+
+.btn-success:hover {
+  background-color: var(--success-hover);
+}
+
+.btn-warning {
+  background-color: var(--warning);
+  color: #fff;
+}
+
+.btn-warning:hover {
+  background-color: var(--warning-hover);
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: var(--danger-hover);
+}
+
+/* --- Контентна зона --- */
+.main-content {
+  padding: 2.5rem; /* Збільшено відступи */
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* --- Адаптивність для мобільних --- */
+@media (max-width: 868px) { /* Збільшено поріг переходу для адаптиву */
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .sidebar-head h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.65rem;
+  }
+
+  main {
+    margin-left: 0;
+  }
+
+  .header-class {
+    padding: 1rem;
+    height: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .ms-2 {
+    margin-left: 0;
+  }
+}
+
+
+
+/* Контейнер */
+.language-select {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+/* Максимально простий селект */
+.language-select select {
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none; /* Прибирає синю рамку в деяких браузерах */
+}

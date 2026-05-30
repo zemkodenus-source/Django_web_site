@@ -1,0 +1,7 @@
+from django.contrib import admin
+from .models import Links , Category
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    search_fields = ('title',)

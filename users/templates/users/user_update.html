@@ -1,0 +1,17 @@
+{% extends 'main/index.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% translate "Редагувати профіль" %}{% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static 'users/css/register_form.css' %}">{% endblock %}
+
+{% block content %}
+<div class="class-form">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-success ms-2" type="submit">{% translate "Редагувати" %}</button>
+    </form>
+</div>
+{% endblock %}

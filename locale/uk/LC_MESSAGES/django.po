@@ -1,0 +1,295 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-16 19:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+#: .\links_app\templates\links\create_link.html:5
+msgid "Додати посилання"
+msgstr ""
+
+#: .\links_app\templates\links\create_link.html:14
+#: .\links_app\templates\links\link_update.html:14
+msgid "Зберегти"
+msgstr ""
+
+#: .\links_app\templates\links\link_delete.html:10
+msgid "Посилання, що видаляється"
+msgstr ""
+
+#: .\links_app\templates\links\link_delete.html:24
+msgid "Ви дійсно бажаєте видалити це посилання?"
+msgstr ""
+
+#: .\links_app\templates\links\link_delete.html:25
+msgid ""
+"Цю дію неможливо буде скасувати. Посилання назавжди зникне з бази даних."
+msgstr ""
+
+#: .\links_app\templates\links\link_delete.html:32
+msgid "Скасувати"
+msgstr ""
+
+#: .\links_app\templates\links\link_delete.html:33
+msgid "Підтвердити видалення"
+msgstr ""
+
+#: .\links_app\templates\links\link_detail.html:10
+msgid "Ваш трансформований Link"
+msgstr ""
+
+#: .\links_app\templates\links\link_detail.html:16
+#: .\links_app\templates\links\links_view.html:27
+#: .\links_app\templates\links\my_links.html:15
+msgid "Опис"
+msgstr ""
+
+#: .\links_app\templates\links\link_detail.html:17
+msgid "Без опису"
+msgstr ""
+
+#: .\links_app\templates\links\link_detail.html:21
+#: .\links_app\templates\links\links_view.html:28
+#: .\links_app\templates\links\my_links.html:16
+msgid "Категорія"
+msgstr ""
+
+#: .\links_app\templates\links\link_detail.html:26
+#: .\links_app\templates\links\links_view.html:29
+#: .\links_app\templates\links\my_links.html:17
+msgid "Дата створення"
+msgstr ""
+
+#: .\links_app\templates\links\link_detail.html:32
+#: .\users\templates\users\user_update.html:14
+msgid "Редагувати"
+msgstr ""
+
+#: .\links_app\templates\links\link_detail.html:33
+msgid "Видалити"
+msgstr ""
+
+#: .\links_app\templates\links\links_view.html:5
+#: .\main\templates\main\index.html:27
+msgid "Спільні посилання"
+msgstr ""
+
+#: .\links_app\templates\links\links_view.html:10
+#: .\links_app\templates\links\my_links.html:10
+msgid "Створити посилання"
+msgstr ""
+
+#: .\links_app\templates\links\links_view.html:13
+msgid "Всі"
+msgstr ""
+
+#: .\links_app\templates\links\links_view.html:24
+msgid "Автор"
+msgstr ""
+
+#: .\links_app\templates\links\links_view.html:25
+msgid "Email"
+msgstr ""
+
+#: .\links_app\templates\links\links_view.html:26
+#: .\links_app\templates\links\my_links.html:14
+msgid "Посилання"
+msgstr ""
+
+#: .\links_app\templates\links\links_view.html:50
+msgid "Назад"
+msgstr ""
+
+#: .\links_app\templates\links\links_view.html:56
+msgid "Вперед"
+msgstr ""
+
+#: .\links_app\templates\links\my_links.html:5
+#: .\main\templates\main\index.html:23
+msgid "Мої посилання"
+msgstr ""
+
+#: .\links_app\templates\links\my_links.html:28
+msgid "Детальніше"
+msgstr ""
+
+#: .\main\templates\main\home.html:5 .\main\templates\main\index.html:19
+msgid "Головна"
+msgstr ""
+
+#: .\main\templates\main\home.html:10
+msgid "Створюй власний простір корисних ресурсів"
+msgstr ""
+
+#: .\main\templates\main\home.html:11
+msgid "Твої посилання — тепер під твоїм контролем."
+msgstr ""
+
+#: .\main\templates\main\home.html:12
+msgid ""
+"Ласкаво просимо до платформи, де кожне посилання отримує нове життя! Наш "
+"сервіс — це не просто інструмент для скорочення URL, це повноцінне "
+"середовище для колекціонування та обміну знаннями."
+msgstr ""
+
+#: .\main\templates\main\home.html:13
+msgid "Що ви можете робити у нас:"
+msgstr ""
+
+#: .\main\templates\main\home.html:15
+msgid ""
+"Персоналізація та скорочення. Перетворюйте довгі, хаотичні адреси на "
+"зрозумілі псевдоніми. Замість набору випадкових знаків — назва, яка говорить "
+"сама за себе."
+msgstr ""
+
+#: .\main\templates\main\home.html:17
+msgid ""
+"Спільний доступ. Ваші посилання не обов’язково мають бути приватними. Робіть "
+"їх відкритими для спільноти, щоб ваші знахідки приносили користь іншим."
+msgstr ""
+
+#: .\main\templates\main\home.html:19
+msgid ""
+"Дослідження та натхнення. Переглядайте посилання, якими діляться інші "
+"користувачі. Знаходьте нові інструменти, статті та ресурси, про які ви "
+"раніше не знали."
+msgstr ""
+
+#: .\main\templates\main\home.html:21
+msgid ""
+"Бібліотека за категоріями. Взаємодійте з іншими учасниками для створення "
+"глобальної бази знань. Групуйте посилання за темами (програмування, дизайн, "
+"освіта, хобі), створюючи зручну структуру, де все розкладено по поличках."
+msgstr ""
+
+#: .\main\templates\main\home.html:24
+msgid ""
+"Приєднуйтесь до нашої спільноти, щоб перетворити хаотичний потік інформації "
+"на впорядковану бібліотеку корисних ресурсів. Давайте будувати інтернет, де "
+"кожне посилання має значення!"
+msgstr ""
+
+#: .\main\templates\main\index.html:16
+msgid "Навігація"
+msgstr ""
+
+#: .\main\templates\main\index.html:35
+msgid "Кабінет"
+msgstr ""
+
+#: .\main\templates\main\index.html:38
+msgid "Вийти"
+msgstr ""
+
+#: .\main\templates\main\index.html:41 .\users\templates\users\login.html:5
+#: .\users\templates\users\login.html:14
+#: .\users\templates\users\register.html:16
+msgid "Увійти"
+msgstr ""
+
+#: .\main\templates\main\index.html:42 .\users\templates\users\register.html:5
+#: .\users\templates\users\register.html:14
+msgid "Зареєструватися"
+msgstr ""
+
+#: .\my_project\settings.py:112
+msgid "Ukrainian"
+msgstr ""
+
+#: .\my_project\settings.py:113
+msgid "English"
+msgstr ""
+
+#: .\users\templates\users\login.html:16
+msgid "Забули пароль?"
+msgstr ""
+
+#: .\users\templates\users\login.html:16
+msgid "Відновити"
+msgstr ""
+
+#: .\users\templates\users\password_reset_complete.html:5
+msgid "Пароль змінено"
+msgstr ""
+
+#: .\users\templates\users\password_reset_complete.html:9
+msgid "Пароль змінено!"
+msgstr ""
+
+#: .\users\templates\users\password_reset_complete.html:10
+msgid "Тепер можете"
+msgstr ""
+
+#: .\users\templates\users\password_reset_complete.html:10
+msgid "увійти"
+msgstr ""
+
+#: .\users\templates\users\password_reset_confirm.html:4
+msgid "Змінити пароль"
+msgstr ""
+
+#: .\users\templates\users\password_reset_confirm.html:10
+msgid "Новий пароль"
+msgstr ""
+
+#: .\users\templates\users\password_reset_confirm.html:14
+msgid "Зберегти пароль"
+msgstr ""
+
+#: .\users\templates\users\password_reset_done.html:5
+#: .\users\templates\users\password_reset_form.html:4
+msgid "Скидання пароля"
+msgstr ""
+
+#: .\users\templates\users\password_reset_done.html:9
+msgid "Лист відправлено на пошту"
+msgstr ""
+
+#: .\users\templates\users\password_reset_done.html:10
+msgid "Перевірте свою електронну пошту та перейдіть за посиланням."
+msgstr ""
+
+#: .\users\templates\users\password_reset_form.html:9
+msgid "Скидання паролю"
+msgstr ""
+
+#: .\users\templates\users\password_reset_form.html:13
+msgid "Надіслати лист"
+msgstr ""
+
+#: .\users\templates\users\profile.html:5
+msgid "Профіль"
+msgstr ""
+
+#: .\users\templates\users\profile.html:10
+msgid "Користувач:"
+msgstr ""
+
+#: .\users\templates\users\profile.html:11
+msgid "Email:"
+msgstr ""
+
+#: .\users\templates\users\profile.html:12
+msgid "Оновити дані"
+msgstr ""
+
+#: .\users\templates\users\user_update.html:5
+msgid "Редагувати профіль"
+msgstr ""

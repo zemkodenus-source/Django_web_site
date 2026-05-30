@@ -1,0 +1,66 @@
+/* Стилі для основного контейнера */
+.main-content {
+    max-width: 900px;         /* Оптимальна ширина для читання */
+    margin: 40px auto;        /* Центрування та відступ зверху */
+    padding: 0 20px;          /* Відступи по боках на мобільних */
+    line-height: 1.65;         /* Міжрядковий інтервал для легкості */
+    color: #334155;           /* М'який темний колір замість чисто чорного */
+    font-family: sans-serif;  /* Або 'Inter', якщо підключив */
+}
+
+/* Заголовки */
+.main-content h2 {
+    font-size: 2.2rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.main-content h3 {
+    font-size: 1.45rem;
+    color: #2563eb;           /* Акцентний синій колір */
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Текст та списки */
+.main-content p {
+    margin-bottom: 1.2rem;
+    font-size: 1.25rem;
+}
+
+.main-content ul {
+    list-style: none;         /* Прибираємо стандартні кружечки */
+    padding: 0;
+}
+
+.main-content li {
+    background: #ffffff;      /* Білий фон для карток */
+    border: 1px solid #e2e8f0; /* Легка рамка */
+    padding: 1.5rem;
+    border-radius: 12px;      /* Закруглені кути */
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Ледь помітна тінь */
+}
+
+/* Стиль тексту всередині li */
+.main-content li p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* Акцент на першому реченні в списку (якщо хочеш виділити назву функції) */
+.main-content li p::first-line {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+
+.main-content img {
+    border-radius: 20px;
+    transition: transform 0.4s ease-in-out; 
+}
+
+.main-content img:hover {
+    transform: scale(1.05);
+}

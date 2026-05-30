@@ -1,0 +1,108 @@
+/* --- Контейнер форми --- */
+.class-form {
+  max-width: 450px;
+  margin: 3rem auto;
+  background-color: var(--bg-card);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--border-color);
+}
+
+/* --- Стилізація внутрішніх елементів Django форми --- */
+.class-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Контейнер для кожного поля (Django зазвичай рендерить p, div або tr) */
+.class-form p,
+.class-form form div {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Назви полів (Labels) */
+.class-form label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+/* Поля вводу (Inputs, Textareas) */
+.class-form input[type="text"],
+.class-form input[type="password"],
+.class-form input[type="email"],
+.class-form input[type="number"],
+.class-form input:not([type="submit"]):not([type="button"]):not([type="checkbox"]) {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  outline: none;
+  transition: var(--transition);
+}
+
+/* Фокус на полі вводу */
+.class-form input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Допоміжний текст Django (підказки до паролів тощо) */
+.class-form .helptext {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+/* Списки помилок валідації Django */
+.class-form .errorlist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  font-size: 0.85rem;
+  color: var(--danger);
+  font-weight: 500;
+}
+
+/* --- Кнопки дій --- */
+.class-form form button[type="submit"] {
+  width: 100%;
+  margin: 1rem 0 1.5rem 0 !important; /* перекриваємо ms-2 */
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+/* Посилання/кнопка "Увійти" під формою */
+.class-form a.btn-warning {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin-left: 0 !important; /* перекриваємо ms-2 */
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.class-form a.btn-warning:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+  color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+/* --- Адаптивність --- */
+@media (max-width: 480px) {
+  .class-form {
+    margin: 1rem auto;
+    padding: 1.5rem;
+  }
+}

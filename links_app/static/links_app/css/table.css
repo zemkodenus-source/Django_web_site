@@ -1,0 +1,136 @@
+.main-content {
+  max-width: 1700px !important; /* Розширює центральну зону сайту саме для цієї сторінки */
+}
+
+/* --- Контейнер сторінки --- */
+.main-content > div {
+  background-color: var(--bg-card);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.03), 0 2px 4px -1px rgba(15, 23, 42, 0.02);
+}
+
+/* --- Кнопка "Створити Link" --- */
+.main-content .btn-success {
+  display: inline-flex;
+  margin-left: 0 !important; /* Вирівнюємо по лівому краю */
+  margin-bottom: 2rem; /* Відступ перед таблицею */
+  padding: 0.8rem 1.6rem;
+  font-weight: 600;
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
+}
+
+/* --- Контейнер таблиці з прокруткою для мобільних --- */
+@media (max-width: 992px) {
+  .main-content > div {
+    overflow-x: auto; /* Дозволяє гортати таблицю вбік на смартфонах */
+    padding: 1.5rem;
+  }
+}
+
+/* --- Стилізація таблиці --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+/* Шапка таблиці */
+thead tr {
+  background-color: #f8fafc;
+  border-bottom: 2px solid var(--border-color);
+}
+
+th {
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  color: var(--bg-sidebar);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+/* Тіло таблиці */
+tbody tr {
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+tbody tr:last-child {
+  border-bottom: none; /* Прибираємо лінію у самого нижнього рядка */
+}
+
+tbody tr:hover {
+  background-color: #f8fafc; /* Підсвічування рядка при наведенні */
+}
+
+td {
+  padding: 1.25rem;
+  color: var(--text-main);
+  vertical-align: middle;
+}
+
+/* --- Керування шириною колонок --- */
+.col-links {
+  width: 25%;
+}
+
+.col-title {
+  width: 35%;
+  color: #475569; /* Змінено з var(--text-muted) на темніший, чіткий сірий колір */
+}
+
+.col-category {
+  width: 15%;
+}
+
+.col-date {
+  width: 15%;
+  white-space: nowrap; /* Забороняє перенос дати на новий рядок */
+}
+
+/* --- Стилізація посилань всередині таблиці --- */
+/* Короткі посилання (Трансформовані) */
+td a[target="_blank"] {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+td a[target="_blank"]:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* Кнопка "Детальніше" */
+td a:not([target="_blank"]) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-main);
+  background-color: #f1f5f9;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+td a:not([target="_blank"]):hover {
+  background-color: var(--bg-sidebar);
+  color: #fff;
+  border-color: var(--bg-sidebar);
+  transform: translateY(-1px);
+}
+
+/* Порожнє значення категорії або опису */
+td:empty::after,
+td:contains("None") {
+  content: "—";
+  color: var(--text-muted);
+}

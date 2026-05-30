@@ -1,0 +1,74 @@
+/* --- Контейнер картки профілю --- */
+.main-content h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--bg-sidebar);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+/* Створення блоку-картки навколо даних */
+.main-content p {
+  background-color: var(--bg-card);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  max-width: 500px;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+/* Стиль для тексту всередині картки */
+.main-content p strong {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+/* --- Кнопка "Оновити дані" --- */
+.main-content a.btn-warning {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--warning);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: var(--radius);
+  text-decoration: none;
+  margin-left: 0 !important; /* Скидаємо відступ ліворуч для вирівнювання */
+  box-shadow: 0 2px 4px rgba(245, 158, 11, 0.2);
+  transition: var(--transition);
+}
+
+.main-content a.btn-warning:hover {
+  background-color: var(--warning-hover);
+  box-shadow: 0 4px 6px rgba(217, 119, 6, 0.3);
+  transform: translateY(-1px);
+}
+
+.main-content a.btn-warning:active {
+  transform: translateY(0);
+}
+
+/* --- Адаптивність --- */
+@media (max-width: 576px) {
+  .main-content h3 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .main-content p {
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .main-content a.btn-warning {
+    width: 100%;
+    text-align: center;
+  }
+}

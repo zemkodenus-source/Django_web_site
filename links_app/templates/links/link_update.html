@@ -1,0 +1,17 @@
+{% extends 'main/index.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}link/{{ object.link }}{% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static 'links_app/css/link_form.css' %}">{% endblock %}
+
+{% block content %}
+<div class="class-form">
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-success ms-2" type="submit">{% translate "Зберегти" %}</button>
+    </form>
+</div>
+{% endblock %}

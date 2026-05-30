@@ -1,0 +1,61 @@
+{% extends 'main/index.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% translate "Спільні посилання" %}{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'links_app/css/all_links_table.css' %}">{% endblock %}
+
+{% block content %}
+<div>
+    <a href="{% url 'create_link' %}" class="btn btn-success ms-2" >{% translate "Створити посилання" %}</a>
+    <div class="category-filter">
+        <a href="?" class="btn {% if not selected_category %}btn-primary{% else %}btn-outline-primary{% endif %}">
+            {% translate "Всі" %}
+        </a>
+        {% for category in categories %}
+            <a href="?category={{ category.id }}"
+            class="btn {% if selected_category == category.id|stringformat:'s' %}btn-primary{% else %}btn-outline-primary{% endif %}"
+            >{{ category.title }}</a>
+        {% endfor %}
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th class="col-author">{% translate "Автор" %}</th>
+                <th class="col-email">{% translate "Email" %}</th>
+                <th class="col-links">{% translate "Посилання" %}</th>
+                <th class="col-title">{% translate "Опис" %}</th>
+                <th class="col-category">{% translate "Категорія" %}</th>
+                <th class="col-date">{% translate "Дата створення" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for el in links %}
+            <tr>
+                <td>{{ el.user.username}}</td>
+                <td>{{ el.user.email }}</td>
+                <td><a href="{{ el.origin_url }}" target="_blank">link/{{ el.link }}/</a></td>
+                <td>{{ el.title }}</td>
+                <td>{{ el.category }}</td>
+                <td>{{ el.created_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+
+    {% if is_paginated %}
+<div class="pagination">
+    {% if page_obj.has_previous %}
+        <a href="?{% if selected_category %}category={{ selected_category }}&{% endif %}page={{ page_obj.previous_page_number }}">{% translate "Назад" %}</a>
+    {% endif %}
+
+    <span>{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
+
+    {% if page_obj.has_next %}
+        <a href="?{% if selected_category %}category={{ selected_category }}&{% endif %}page={{ page_obj.next_page_number }}">{% translate "Вперед" %}</a>
+    {% endif %}
+</div>
+    {% endif %}
+</div>
+{% endblock %}
